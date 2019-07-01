@@ -9,15 +9,47 @@
         android:id="@+id/homeFragment"
         android:name="com.lyh.androidnavigation.HomeFragment"
         android:label="fragment_home"
-        tools:layout="@layout/fragment_home">
-        <action
-            android:id="@+id/action_homeFragment_to_firstFragment"
-            app:destination="@id/firstFragment" />
-    </fragment>
+        tools:layout="@layout/fragment_home" />
 
     <fragment
         android:id="@+id/firstFragment"
         android:name="com.lyh.androidnavigation.FirstFragment"
         android:label="fragment_first"
-        tools:layout="@layout/fragment_first" />
+        tools:layout="@layout/fragment_first">
+
+        <argument
+            android:name="firstFragmentArgument"
+            android:defaultValue="hello FirstFragment"
+            app:argType="string" />
+
+        <action
+            android:id="@+id/action_firstFragment_to_secondFragment"
+            app:destination="@id/secondFragment"
+            app:enterAnim="@anim/nav_default_enter_anim"
+            app:exitAnim="@anim/nav_default_exit_anim"
+            app:popEnterAnim="@anim/nav_default_pop_enter_anim"
+            app:popExitAnim="@anim/nav_default_pop_exit_anim" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/secondFragment"
+        android:name="com.lyh.androidnavigation.SecondFragment"
+        android:label="fragment_second"
+        tools:layout="@layout/fragment_second">
+
+        <action
+            android:id="@+id/action_secondFragment_to_homeFragment"
+            app:destination="@id/homeFragment"
+            app:enterAnim="@anim/nav_default_enter_anim"
+            app:exitAnim="@anim/nav_default_exit_anim"
+            app:popEnterAnim="@anim/nav_default_pop_enter_anim"
+            app:popExitAnim="@anim/nav_default_pop_exit_anim" />
+
+        <argument
+            android:name="secondFragmentArgument"
+            android:defaultValue="@null"
+            app:nullable="true"
+            app:argType="string" />
+    </fragment>
+
 </navigation>
