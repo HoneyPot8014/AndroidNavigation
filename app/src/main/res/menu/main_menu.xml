@@ -3,7 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
     <item
-        android:id="@+id/menu"
+        android:id="@+id/secondFragment"
         android:icon="@drawable/ic_launcher_foreground"
         android:menuCategory="secondary"
         android:title="menu"
